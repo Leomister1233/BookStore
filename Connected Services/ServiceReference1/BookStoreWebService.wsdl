@@ -1,0 +1,2419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetUserInfoByCondition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoByConditionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoByConditionResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserInfoByUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoByUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoByUsernameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoByIdPassWord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoByIdPassWordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoByIdPassWordResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserOrderInfoByUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserOrderInfoByUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserOrderInfoByUsernameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPassWordInfoReset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPassWordInfoResetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserPassWordInfoResetResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUserInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUserInfoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertUserInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteUserInfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfoByUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfoByUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserInfoByUsernameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserPasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBookInfoById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookCategory" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookAuthor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookPrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookSummary" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookImage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBookInfoByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertBookInfoByIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBookInfoById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookCategory" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookAuthor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookPrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookSummary" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newBookImage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBookInfoByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateBookInfoByIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateQuantityByBookId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookQuantity" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateQuantityByBookIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateQuantityByBookIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookInfoById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookInfoByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookInfoByIdResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBookInfoById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBookInfoByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteBookInfoByIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookInfoByCondition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookCategory" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookAuthor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookPrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookSummary" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookInfoByConditionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookInfoByConditionResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookInfoByConditionClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookCategory" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookAuthor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookPrice" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookInfoByConditionClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookInfoByConditionClientResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookPhotoStringByStuNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookPhotoStringByStuNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookPhotoStringByStuNoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBookCartInfoById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookCategory" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookAuthor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookPrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookQuantity" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBookCartInfoByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertBookCartInfoByIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBookCartInfoById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBookCartInfoByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteBookCartInfoByIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBookCartItemById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBookCartItemByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteBookCartItemByIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookCartInfoById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookCartInfoByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookCartInfoByIdResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookPriceById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookPriceByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookPriceByIdResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookQuantityById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookQuantityByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookQuantityByIdResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertPhotoInfoByUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="photo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertPhotoInfoByUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertPhotoInfoByUsernameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfilePhotobyUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfilePhotobyUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfilePhotobyUsernameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProfilePhotoByUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProfilePhotoByUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteProfilePhotoByUsernameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProfilePhotoByUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="photo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProfilePhotoByUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateProfilePhotoByUsernameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUserInfoByConditionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByCondition" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByConditionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByUsername" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByIdPassWordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByIdPassWord" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByIdPassWordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByIdPassWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserOrderInfoByUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserOrderInfoByUsername" />
+  </wsdl:message>
+  <wsdl:message name="GetUserOrderInfoByUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserOrderInfoByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPassWordInfoResetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserPassWordInfoReset" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPassWordInfoResetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserPassWordInfoResetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoByUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoByUsername" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoByUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookInfoByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertBookInfoById" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookInfoByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertBookInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookInfoByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBookInfoById" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookInfoByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBookInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuantityByBookIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateQuantityByBookId" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuantityByBookIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateQuantityByBookIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookInfoById" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookInfoByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteBookInfoById" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookInfoByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteBookInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByConditionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookInfoByCondition" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByConditionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookInfoByConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByConditionClientSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookInfoByConditionClient" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByConditionClientSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookInfoByConditionClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookPhotoStringByStuNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookPhotoStringByStuNo" />
+  </wsdl:message>
+  <wsdl:message name="GetBookPhotoStringByStuNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookPhotoStringByStuNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookCartInfoByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertBookCartInfoById" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookCartInfoByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertBookCartInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookCartInfoByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteBookCartInfoById" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookCartInfoByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteBookCartInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookCartItemByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteBookCartItemById" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookCartItemByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteBookCartItemByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookCartInfoByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookCartInfoById" />
+  </wsdl:message>
+  <wsdl:message name="GetBookCartInfoByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookCartInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookPriceByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookPriceById" />
+  </wsdl:message>
+  <wsdl:message name="GetBookPriceByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookPriceByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookQuantityByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookQuantityById" />
+  </wsdl:message>
+  <wsdl:message name="GetBookQuantityByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookQuantityByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertPhotoInfoByUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertPhotoInfoByUsername" />
+  </wsdl:message>
+  <wsdl:message name="InsertPhotoInfoByUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertPhotoInfoByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePhotobyUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfilePhotobyUsername" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePhotobyUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfilePhotobyUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProfilePhotoByUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteProfilePhotoByUsername" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProfilePhotoByUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteProfilePhotoByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfilePhotoByUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProfilePhotoByUsername" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfilePhotoByUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProfilePhotoByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByConditionHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByConditionHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByUsernameHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByUsernameHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByIdPassWordHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByIdPassWordHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserOrderInfoByUsernameHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserOrderInfoByUsernameHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPassWordInfoResetHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPassWordInfoResetHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserInfoHttpGetIn" />
+  <wsdl:message name="GetAllUserInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserInfoHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserInfoHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoByUsernameHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoByUsernameHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserPasswordHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserPasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookInfoByIdHttpGetIn">
+    <wsdl:part name="BookId" type="s:string" />
+    <wsdl:part name="BookName" type="s:string" />
+    <wsdl:part name="BookCategory" type="s:string" />
+    <wsdl:part name="BookAuthor" type="s:string" />
+    <wsdl:part name="BookPrice" type="s:string" />
+    <wsdl:part name="BookSummary" type="s:string" />
+    <wsdl:part name="BookImage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookInfoByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookInfoByIdHttpGetIn">
+    <wsdl:part name="BookId" type="s:string" />
+    <wsdl:part name="BookName" type="s:string" />
+    <wsdl:part name="BookCategory" type="s:string" />
+    <wsdl:part name="BookAuthor" type="s:string" />
+    <wsdl:part name="BookPrice" type="s:string" />
+    <wsdl:part name="BookSummary" type="s:string" />
+    <wsdl:part name="newBookImage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookInfoByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuantityByBookIdHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="BookId" type="s:string" />
+    <wsdl:part name="BookQuantity" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuantityByBookIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByIdHttpGetIn">
+    <wsdl:part name="BookId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookInfoByIdHttpGetIn">
+    <wsdl:part name="BookId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookInfoByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByConditionHttpGetIn">
+    <wsdl:part name="BookId" type="s:string" />
+    <wsdl:part name="BookName" type="s:string" />
+    <wsdl:part name="BookCategory" type="s:string" />
+    <wsdl:part name="BookAuthor" type="s:string" />
+    <wsdl:part name="BookPrice" type="s:string" />
+    <wsdl:part name="BookSummary" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByConditionHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByConditionClientHttpGetIn">
+    <wsdl:part name="BookId" type="s:string" />
+    <wsdl:part name="BookName" type="s:string" />
+    <wsdl:part name="BookCategory" type="s:string" />
+    <wsdl:part name="BookAuthor" type="s:string" />
+    <wsdl:part name="BookPrice" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByConditionClientHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBookPhotoStringByStuNoHttpGetIn">
+    <wsdl:part name="BookId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookPhotoStringByStuNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookCartInfoByIdHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="BookId" type="s:string" />
+    <wsdl:part name="BookName" type="s:string" />
+    <wsdl:part name="BookCategory" type="s:string" />
+    <wsdl:part name="BookAuthor" type="s:string" />
+    <wsdl:part name="BookPrice" type="s:string" />
+    <wsdl:part name="BookQuantity" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookCartInfoByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookCartInfoByIdHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookCartInfoByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookCartItemByIdHttpGetIn">
+    <wsdl:part name="BookId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookCartItemByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetBookCartInfoByIdHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookCartInfoByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBookPriceByIdHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookPriceByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBookQuantityByIdHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookQuantityByIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="InsertPhotoInfoByUsernameHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="photo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertPhotoInfoByUsernameHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePhotobyUsernameHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePhotobyUsernameHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProfilePhotoByUsernameHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProfilePhotoByUsernameHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfilePhotoByUsernameHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="photo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfilePhotoByUsernameHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByConditionHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByConditionHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByUsernameHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByUsernameHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByIdPassWordHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoByIdPassWordHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserOrderInfoByUsernameHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserOrderInfoByUsernameHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPassWordInfoResetHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPassWordInfoResetHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserInfoHttpPostIn" />
+  <wsdl:message name="GetAllUserInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserInfoHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserInfoHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoByUsernameHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="phone" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoByUsernameHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserPasswordHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserPasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookInfoByIdHttpPostIn">
+    <wsdl:part name="BookId" type="s:string" />
+    <wsdl:part name="BookName" type="s:string" />
+    <wsdl:part name="BookCategory" type="s:string" />
+    <wsdl:part name="BookAuthor" type="s:string" />
+    <wsdl:part name="BookPrice" type="s:string" />
+    <wsdl:part name="BookSummary" type="s:string" />
+    <wsdl:part name="BookImage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookInfoByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookInfoByIdHttpPostIn">
+    <wsdl:part name="BookId" type="s:string" />
+    <wsdl:part name="BookName" type="s:string" />
+    <wsdl:part name="BookCategory" type="s:string" />
+    <wsdl:part name="BookAuthor" type="s:string" />
+    <wsdl:part name="BookPrice" type="s:string" />
+    <wsdl:part name="BookSummary" type="s:string" />
+    <wsdl:part name="newBookImage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookInfoByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuantityByBookIdHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="BookId" type="s:string" />
+    <wsdl:part name="BookQuantity" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuantityByBookIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByIdHttpPostIn">
+    <wsdl:part name="BookId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookInfoByIdHttpPostIn">
+    <wsdl:part name="BookId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookInfoByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByConditionHttpPostIn">
+    <wsdl:part name="BookId" type="s:string" />
+    <wsdl:part name="BookName" type="s:string" />
+    <wsdl:part name="BookCategory" type="s:string" />
+    <wsdl:part name="BookAuthor" type="s:string" />
+    <wsdl:part name="BookPrice" type="s:string" />
+    <wsdl:part name="BookSummary" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByConditionHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByConditionClientHttpPostIn">
+    <wsdl:part name="BookId" type="s:string" />
+    <wsdl:part name="BookName" type="s:string" />
+    <wsdl:part name="BookCategory" type="s:string" />
+    <wsdl:part name="BookAuthor" type="s:string" />
+    <wsdl:part name="BookPrice" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookInfoByConditionClientHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBookPhotoStringByStuNoHttpPostIn">
+    <wsdl:part name="BookId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookPhotoStringByStuNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookCartInfoByIdHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="BookId" type="s:string" />
+    <wsdl:part name="BookName" type="s:string" />
+    <wsdl:part name="BookCategory" type="s:string" />
+    <wsdl:part name="BookAuthor" type="s:string" />
+    <wsdl:part name="BookPrice" type="s:string" />
+    <wsdl:part name="BookQuantity" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertBookCartInfoByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookCartInfoByIdHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookCartInfoByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookCartItemByIdHttpPostIn">
+    <wsdl:part name="BookId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookCartItemByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetBookCartInfoByIdHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookCartInfoByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBookPriceByIdHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookPriceByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBookQuantityByIdHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBookQuantityByIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="InsertPhotoInfoByUsernameHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="photo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertPhotoInfoByUsernameHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePhotobyUsernameHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePhotobyUsernameHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProfilePhotoByUsernameHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProfilePhotoByUsernameHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfilePhotoByUsernameHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="photo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfilePhotoByUsernameHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="BookStoreWebServiceSoap">
+    <wsdl:operation name="GetUserInfoByCondition">
+      <wsdl:input message="tns:GetUserInfoByConditionSoapIn" />
+      <wsdl:output message="tns:GetUserInfoByConditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUsername">
+      <wsdl:input message="tns:GetUserInfoByUsernameSoapIn" />
+      <wsdl:output message="tns:GetUserInfoByUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByIdPassWord">
+      <wsdl:input message="tns:GetUserInfoByIdPassWordSoapIn" />
+      <wsdl:output message="tns:GetUserInfoByIdPassWordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOrderInfoByUsername">
+      <wsdl:input message="tns:GetUserOrderInfoByUsernameSoapIn" />
+      <wsdl:output message="tns:GetUserOrderInfoByUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPassWordInfoReset">
+      <wsdl:input message="tns:GetUserPassWordInfoResetSoapIn" />
+      <wsdl:output message="tns:GetUserPassWordInfoResetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserInfo">
+      <wsdl:input message="tns:GetAllUserInfoSoapIn" />
+      <wsdl:output message="tns:GetAllUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserInfo">
+      <wsdl:input message="tns:InsertUserInfoSoapIn" />
+      <wsdl:output message="tns:InsertUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserInfo">
+      <wsdl:input message="tns:DeleteUserInfoSoapIn" />
+      <wsdl:output message="tns:DeleteUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoByUsername">
+      <wsdl:input message="tns:UpdateUserInfoByUsernameSoapIn" />
+      <wsdl:output message="tns:UpdateUserInfoByUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <wsdl:input message="tns:UpdateUserPasswordSoapIn" />
+      <wsdl:output message="tns:UpdateUserPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookInfoById">
+      <wsdl:input message="tns:InsertBookInfoByIdSoapIn" />
+      <wsdl:output message="tns:InsertBookInfoByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookInfoById">
+      <wsdl:input message="tns:UpdateBookInfoByIdSoapIn" />
+      <wsdl:output message="tns:UpdateBookInfoByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantityByBookId">
+      <wsdl:input message="tns:UpdateQuantityByBookIdSoapIn" />
+      <wsdl:output message="tns:UpdateQuantityByBookIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoById">
+      <wsdl:input message="tns:GetBookInfoByIdSoapIn" />
+      <wsdl:output message="tns:GetBookInfoByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookInfoById">
+      <wsdl:input message="tns:DeleteBookInfoByIdSoapIn" />
+      <wsdl:output message="tns:DeleteBookInfoByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByCondition">
+      <wsdl:input message="tns:GetBookInfoByConditionSoapIn" />
+      <wsdl:output message="tns:GetBookInfoByConditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByConditionClient">
+      <wsdl:input message="tns:GetBookInfoByConditionClientSoapIn" />
+      <wsdl:output message="tns:GetBookInfoByConditionClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPhotoStringByStuNo">
+      <wsdl:input message="tns:GetBookPhotoStringByStuNoSoapIn" />
+      <wsdl:output message="tns:GetBookPhotoStringByStuNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookCartInfoById">
+      <wsdl:input message="tns:InsertBookCartInfoByIdSoapIn" />
+      <wsdl:output message="tns:InsertBookCartInfoByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartInfoById">
+      <wsdl:input message="tns:DeleteBookCartInfoByIdSoapIn" />
+      <wsdl:output message="tns:DeleteBookCartInfoByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartItemById">
+      <wsdl:input message="tns:DeleteBookCartItemByIdSoapIn" />
+      <wsdl:output message="tns:DeleteBookCartItemByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookCartInfoById">
+      <wsdl:input message="tns:GetBookCartInfoByIdSoapIn" />
+      <wsdl:output message="tns:GetBookCartInfoByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPriceById">
+      <wsdl:input message="tns:GetBookPriceByIdSoapIn" />
+      <wsdl:output message="tns:GetBookPriceByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookQuantityById">
+      <wsdl:input message="tns:GetBookQuantityByIdSoapIn" />
+      <wsdl:output message="tns:GetBookQuantityByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPhotoInfoByUsername">
+      <wsdl:input message="tns:InsertPhotoInfoByUsernameSoapIn" />
+      <wsdl:output message="tns:InsertPhotoInfoByUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePhotobyUsername">
+      <wsdl:input message="tns:GetProfilePhotobyUsernameSoapIn" />
+      <wsdl:output message="tns:GetProfilePhotobyUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProfilePhotoByUsername">
+      <wsdl:input message="tns:DeleteProfilePhotoByUsernameSoapIn" />
+      <wsdl:output message="tns:DeleteProfilePhotoByUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfilePhotoByUsername">
+      <wsdl:input message="tns:UpdateProfilePhotoByUsernameSoapIn" />
+      <wsdl:output message="tns:UpdateProfilePhotoByUsernameSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="BookStoreWebServiceHttpGet">
+    <wsdl:operation name="GetUserInfoByCondition">
+      <wsdl:input message="tns:GetUserInfoByConditionHttpGetIn" />
+      <wsdl:output message="tns:GetUserInfoByConditionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUsername">
+      <wsdl:input message="tns:GetUserInfoByUsernameHttpGetIn" />
+      <wsdl:output message="tns:GetUserInfoByUsernameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByIdPassWord">
+      <wsdl:input message="tns:GetUserInfoByIdPassWordHttpGetIn" />
+      <wsdl:output message="tns:GetUserInfoByIdPassWordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOrderInfoByUsername">
+      <wsdl:input message="tns:GetUserOrderInfoByUsernameHttpGetIn" />
+      <wsdl:output message="tns:GetUserOrderInfoByUsernameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPassWordInfoReset">
+      <wsdl:input message="tns:GetUserPassWordInfoResetHttpGetIn" />
+      <wsdl:output message="tns:GetUserPassWordInfoResetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserInfo">
+      <wsdl:input message="tns:GetAllUserInfoHttpGetIn" />
+      <wsdl:output message="tns:GetAllUserInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserInfo">
+      <wsdl:input message="tns:InsertUserInfoHttpGetIn" />
+      <wsdl:output message="tns:InsertUserInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserInfo">
+      <wsdl:input message="tns:DeleteUserInfoHttpGetIn" />
+      <wsdl:output message="tns:DeleteUserInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoByUsername">
+      <wsdl:input message="tns:UpdateUserInfoByUsernameHttpGetIn" />
+      <wsdl:output message="tns:UpdateUserInfoByUsernameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <wsdl:input message="tns:UpdateUserPasswordHttpGetIn" />
+      <wsdl:output message="tns:UpdateUserPasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookInfoById">
+      <wsdl:input message="tns:InsertBookInfoByIdHttpGetIn" />
+      <wsdl:output message="tns:InsertBookInfoByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookInfoById">
+      <wsdl:input message="tns:UpdateBookInfoByIdHttpGetIn" />
+      <wsdl:output message="tns:UpdateBookInfoByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantityByBookId">
+      <wsdl:input message="tns:UpdateQuantityByBookIdHttpGetIn" />
+      <wsdl:output message="tns:UpdateQuantityByBookIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoById">
+      <wsdl:input message="tns:GetBookInfoByIdHttpGetIn" />
+      <wsdl:output message="tns:GetBookInfoByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookInfoById">
+      <wsdl:input message="tns:DeleteBookInfoByIdHttpGetIn" />
+      <wsdl:output message="tns:DeleteBookInfoByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByCondition">
+      <wsdl:input message="tns:GetBookInfoByConditionHttpGetIn" />
+      <wsdl:output message="tns:GetBookInfoByConditionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByConditionClient">
+      <wsdl:input message="tns:GetBookInfoByConditionClientHttpGetIn" />
+      <wsdl:output message="tns:GetBookInfoByConditionClientHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPhotoStringByStuNo">
+      <wsdl:input message="tns:GetBookPhotoStringByStuNoHttpGetIn" />
+      <wsdl:output message="tns:GetBookPhotoStringByStuNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookCartInfoById">
+      <wsdl:input message="tns:InsertBookCartInfoByIdHttpGetIn" />
+      <wsdl:output message="tns:InsertBookCartInfoByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartInfoById">
+      <wsdl:input message="tns:DeleteBookCartInfoByIdHttpGetIn" />
+      <wsdl:output message="tns:DeleteBookCartInfoByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartItemById">
+      <wsdl:input message="tns:DeleteBookCartItemByIdHttpGetIn" />
+      <wsdl:output message="tns:DeleteBookCartItemByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookCartInfoById">
+      <wsdl:input message="tns:GetBookCartInfoByIdHttpGetIn" />
+      <wsdl:output message="tns:GetBookCartInfoByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPriceById">
+      <wsdl:input message="tns:GetBookPriceByIdHttpGetIn" />
+      <wsdl:output message="tns:GetBookPriceByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookQuantityById">
+      <wsdl:input message="tns:GetBookQuantityByIdHttpGetIn" />
+      <wsdl:output message="tns:GetBookQuantityByIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPhotoInfoByUsername">
+      <wsdl:input message="tns:InsertPhotoInfoByUsernameHttpGetIn" />
+      <wsdl:output message="tns:InsertPhotoInfoByUsernameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePhotobyUsername">
+      <wsdl:input message="tns:GetProfilePhotobyUsernameHttpGetIn" />
+      <wsdl:output message="tns:GetProfilePhotobyUsernameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProfilePhotoByUsername">
+      <wsdl:input message="tns:DeleteProfilePhotoByUsernameHttpGetIn" />
+      <wsdl:output message="tns:DeleteProfilePhotoByUsernameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfilePhotoByUsername">
+      <wsdl:input message="tns:UpdateProfilePhotoByUsernameHttpGetIn" />
+      <wsdl:output message="tns:UpdateProfilePhotoByUsernameHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="BookStoreWebServiceHttpPost">
+    <wsdl:operation name="GetUserInfoByCondition">
+      <wsdl:input message="tns:GetUserInfoByConditionHttpPostIn" />
+      <wsdl:output message="tns:GetUserInfoByConditionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUsername">
+      <wsdl:input message="tns:GetUserInfoByUsernameHttpPostIn" />
+      <wsdl:output message="tns:GetUserInfoByUsernameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByIdPassWord">
+      <wsdl:input message="tns:GetUserInfoByIdPassWordHttpPostIn" />
+      <wsdl:output message="tns:GetUserInfoByIdPassWordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOrderInfoByUsername">
+      <wsdl:input message="tns:GetUserOrderInfoByUsernameHttpPostIn" />
+      <wsdl:output message="tns:GetUserOrderInfoByUsernameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPassWordInfoReset">
+      <wsdl:input message="tns:GetUserPassWordInfoResetHttpPostIn" />
+      <wsdl:output message="tns:GetUserPassWordInfoResetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserInfo">
+      <wsdl:input message="tns:GetAllUserInfoHttpPostIn" />
+      <wsdl:output message="tns:GetAllUserInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserInfo">
+      <wsdl:input message="tns:InsertUserInfoHttpPostIn" />
+      <wsdl:output message="tns:InsertUserInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserInfo">
+      <wsdl:input message="tns:DeleteUserInfoHttpPostIn" />
+      <wsdl:output message="tns:DeleteUserInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoByUsername">
+      <wsdl:input message="tns:UpdateUserInfoByUsernameHttpPostIn" />
+      <wsdl:output message="tns:UpdateUserInfoByUsernameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <wsdl:input message="tns:UpdateUserPasswordHttpPostIn" />
+      <wsdl:output message="tns:UpdateUserPasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookInfoById">
+      <wsdl:input message="tns:InsertBookInfoByIdHttpPostIn" />
+      <wsdl:output message="tns:InsertBookInfoByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookInfoById">
+      <wsdl:input message="tns:UpdateBookInfoByIdHttpPostIn" />
+      <wsdl:output message="tns:UpdateBookInfoByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantityByBookId">
+      <wsdl:input message="tns:UpdateQuantityByBookIdHttpPostIn" />
+      <wsdl:output message="tns:UpdateQuantityByBookIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoById">
+      <wsdl:input message="tns:GetBookInfoByIdHttpPostIn" />
+      <wsdl:output message="tns:GetBookInfoByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookInfoById">
+      <wsdl:input message="tns:DeleteBookInfoByIdHttpPostIn" />
+      <wsdl:output message="tns:DeleteBookInfoByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByCondition">
+      <wsdl:input message="tns:GetBookInfoByConditionHttpPostIn" />
+      <wsdl:output message="tns:GetBookInfoByConditionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByConditionClient">
+      <wsdl:input message="tns:GetBookInfoByConditionClientHttpPostIn" />
+      <wsdl:output message="tns:GetBookInfoByConditionClientHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPhotoStringByStuNo">
+      <wsdl:input message="tns:GetBookPhotoStringByStuNoHttpPostIn" />
+      <wsdl:output message="tns:GetBookPhotoStringByStuNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookCartInfoById">
+      <wsdl:input message="tns:InsertBookCartInfoByIdHttpPostIn" />
+      <wsdl:output message="tns:InsertBookCartInfoByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartInfoById">
+      <wsdl:input message="tns:DeleteBookCartInfoByIdHttpPostIn" />
+      <wsdl:output message="tns:DeleteBookCartInfoByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartItemById">
+      <wsdl:input message="tns:DeleteBookCartItemByIdHttpPostIn" />
+      <wsdl:output message="tns:DeleteBookCartItemByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookCartInfoById">
+      <wsdl:input message="tns:GetBookCartInfoByIdHttpPostIn" />
+      <wsdl:output message="tns:GetBookCartInfoByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPriceById">
+      <wsdl:input message="tns:GetBookPriceByIdHttpPostIn" />
+      <wsdl:output message="tns:GetBookPriceByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookQuantityById">
+      <wsdl:input message="tns:GetBookQuantityByIdHttpPostIn" />
+      <wsdl:output message="tns:GetBookQuantityByIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPhotoInfoByUsername">
+      <wsdl:input message="tns:InsertPhotoInfoByUsernameHttpPostIn" />
+      <wsdl:output message="tns:InsertPhotoInfoByUsernameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePhotobyUsername">
+      <wsdl:input message="tns:GetProfilePhotobyUsernameHttpPostIn" />
+      <wsdl:output message="tns:GetProfilePhotobyUsernameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProfilePhotoByUsername">
+      <wsdl:input message="tns:DeleteProfilePhotoByUsernameHttpPostIn" />
+      <wsdl:output message="tns:DeleteProfilePhotoByUsernameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfilePhotoByUsername">
+      <wsdl:input message="tns:UpdateProfilePhotoByUsernameHttpPostIn" />
+      <wsdl:output message="tns:UpdateProfilePhotoByUsernameHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BookStoreWebServiceSoap" type="tns:BookStoreWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserInfoByCondition">
+      <soap:operation soapAction="http://tempuri.org/GetUserInfoByCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUsername">
+      <soap:operation soapAction="http://tempuri.org/GetUserInfoByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByIdPassWord">
+      <soap:operation soapAction="http://tempuri.org/GetUserInfoByIdPassWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOrderInfoByUsername">
+      <soap:operation soapAction="http://tempuri.org/GetUserOrderInfoByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPassWordInfoReset">
+      <soap:operation soapAction="http://tempuri.org/GetUserPassWordInfoReset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserInfo">
+      <soap:operation soapAction="http://tempuri.org/GetAllUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserInfo">
+      <soap:operation soapAction="http://tempuri.org/InsertUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserInfo">
+      <soap:operation soapAction="http://tempuri.org/DeleteUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoByUsername">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserInfoByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookInfoById">
+      <soap:operation soapAction="http://tempuri.org/InsertBookInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookInfoById">
+      <soap:operation soapAction="http://tempuri.org/UpdateBookInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantityByBookId">
+      <soap:operation soapAction="http://tempuri.org/UpdateQuantityByBookId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoById">
+      <soap:operation soapAction="http://tempuri.org/GetBookInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookInfoById">
+      <soap:operation soapAction="http://tempuri.org/DeleteBookInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByCondition">
+      <soap:operation soapAction="http://tempuri.org/GetBookInfoByCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByConditionClient">
+      <soap:operation soapAction="http://tempuri.org/GetBookInfoByConditionClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPhotoStringByStuNo">
+      <soap:operation soapAction="http://tempuri.org/GetBookPhotoStringByStuNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookCartInfoById">
+      <soap:operation soapAction="http://tempuri.org/InsertBookCartInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartInfoById">
+      <soap:operation soapAction="http://tempuri.org/DeleteBookCartInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartItemById">
+      <soap:operation soapAction="http://tempuri.org/DeleteBookCartItemById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookCartInfoById">
+      <soap:operation soapAction="http://tempuri.org/GetBookCartInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPriceById">
+      <soap:operation soapAction="http://tempuri.org/GetBookPriceById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookQuantityById">
+      <soap:operation soapAction="http://tempuri.org/GetBookQuantityById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPhotoInfoByUsername">
+      <soap:operation soapAction="http://tempuri.org/InsertPhotoInfoByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePhotobyUsername">
+      <soap:operation soapAction="http://tempuri.org/GetProfilePhotobyUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProfilePhotoByUsername">
+      <soap:operation soapAction="http://tempuri.org/DeleteProfilePhotoByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfilePhotoByUsername">
+      <soap:operation soapAction="http://tempuri.org/UpdateProfilePhotoByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BookStoreWebServiceSoap12" type="tns:BookStoreWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserInfoByCondition">
+      <soap12:operation soapAction="http://tempuri.org/GetUserInfoByCondition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUsername">
+      <soap12:operation soapAction="http://tempuri.org/GetUserInfoByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByIdPassWord">
+      <soap12:operation soapAction="http://tempuri.org/GetUserInfoByIdPassWord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOrderInfoByUsername">
+      <soap12:operation soapAction="http://tempuri.org/GetUserOrderInfoByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPassWordInfoReset">
+      <soap12:operation soapAction="http://tempuri.org/GetUserPassWordInfoReset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/InsertUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/DeleteUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoByUsername">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserInfoByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookInfoById">
+      <soap12:operation soapAction="http://tempuri.org/InsertBookInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookInfoById">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBookInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantityByBookId">
+      <soap12:operation soapAction="http://tempuri.org/UpdateQuantityByBookId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoById">
+      <soap12:operation soapAction="http://tempuri.org/GetBookInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookInfoById">
+      <soap12:operation soapAction="http://tempuri.org/DeleteBookInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByCondition">
+      <soap12:operation soapAction="http://tempuri.org/GetBookInfoByCondition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByConditionClient">
+      <soap12:operation soapAction="http://tempuri.org/GetBookInfoByConditionClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPhotoStringByStuNo">
+      <soap12:operation soapAction="http://tempuri.org/GetBookPhotoStringByStuNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookCartInfoById">
+      <soap12:operation soapAction="http://tempuri.org/InsertBookCartInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartInfoById">
+      <soap12:operation soapAction="http://tempuri.org/DeleteBookCartInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartItemById">
+      <soap12:operation soapAction="http://tempuri.org/DeleteBookCartItemById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookCartInfoById">
+      <soap12:operation soapAction="http://tempuri.org/GetBookCartInfoById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPriceById">
+      <soap12:operation soapAction="http://tempuri.org/GetBookPriceById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookQuantityById">
+      <soap12:operation soapAction="http://tempuri.org/GetBookQuantityById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPhotoInfoByUsername">
+      <soap12:operation soapAction="http://tempuri.org/InsertPhotoInfoByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePhotobyUsername">
+      <soap12:operation soapAction="http://tempuri.org/GetProfilePhotobyUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProfilePhotoByUsername">
+      <soap12:operation soapAction="http://tempuri.org/DeleteProfilePhotoByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfilePhotoByUsername">
+      <soap12:operation soapAction="http://tempuri.org/UpdateProfilePhotoByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BookStoreWebServiceHttpGet" type="tns:BookStoreWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetUserInfoByCondition">
+      <http:operation location="/GetUserInfoByCondition" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUsername">
+      <http:operation location="/GetUserInfoByUsername" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByIdPassWord">
+      <http:operation location="/GetUserInfoByIdPassWord" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOrderInfoByUsername">
+      <http:operation location="/GetUserOrderInfoByUsername" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPassWordInfoReset">
+      <http:operation location="/GetUserPassWordInfoReset" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserInfo">
+      <http:operation location="/GetAllUserInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserInfo">
+      <http:operation location="/InsertUserInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserInfo">
+      <http:operation location="/DeleteUserInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoByUsername">
+      <http:operation location="/UpdateUserInfoByUsername" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <http:operation location="/UpdateUserPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookInfoById">
+      <http:operation location="/InsertBookInfoById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookInfoById">
+      <http:operation location="/UpdateBookInfoById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantityByBookId">
+      <http:operation location="/UpdateQuantityByBookId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoById">
+      <http:operation location="/GetBookInfoById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookInfoById">
+      <http:operation location="/DeleteBookInfoById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByCondition">
+      <http:operation location="/GetBookInfoByCondition" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByConditionClient">
+      <http:operation location="/GetBookInfoByConditionClient" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPhotoStringByStuNo">
+      <http:operation location="/GetBookPhotoStringByStuNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookCartInfoById">
+      <http:operation location="/InsertBookCartInfoById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartInfoById">
+      <http:operation location="/DeleteBookCartInfoById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartItemById">
+      <http:operation location="/DeleteBookCartItemById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookCartInfoById">
+      <http:operation location="/GetBookCartInfoById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPriceById">
+      <http:operation location="/GetBookPriceById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookQuantityById">
+      <http:operation location="/GetBookQuantityById" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPhotoInfoByUsername">
+      <http:operation location="/InsertPhotoInfoByUsername" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePhotobyUsername">
+      <http:operation location="/GetProfilePhotobyUsername" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProfilePhotoByUsername">
+      <http:operation location="/DeleteProfilePhotoByUsername" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfilePhotoByUsername">
+      <http:operation location="/UpdateProfilePhotoByUsername" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BookStoreWebServiceHttpPost" type="tns:BookStoreWebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetUserInfoByCondition">
+      <http:operation location="/GetUserInfoByCondition" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUsername">
+      <http:operation location="/GetUserInfoByUsername" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByIdPassWord">
+      <http:operation location="/GetUserInfoByIdPassWord" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserOrderInfoByUsername">
+      <http:operation location="/GetUserOrderInfoByUsername" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPassWordInfoReset">
+      <http:operation location="/GetUserPassWordInfoReset" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserInfo">
+      <http:operation location="/GetAllUserInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUserInfo">
+      <http:operation location="/InsertUserInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserInfo">
+      <http:operation location="/DeleteUserInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoByUsername">
+      <http:operation location="/UpdateUserInfoByUsername" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <http:operation location="/UpdateUserPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookInfoById">
+      <http:operation location="/InsertBookInfoById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookInfoById">
+      <http:operation location="/UpdateBookInfoById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuantityByBookId">
+      <http:operation location="/UpdateQuantityByBookId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoById">
+      <http:operation location="/GetBookInfoById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookInfoById">
+      <http:operation location="/DeleteBookInfoById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByCondition">
+      <http:operation location="/GetBookInfoByCondition" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookInfoByConditionClient">
+      <http:operation location="/GetBookInfoByConditionClient" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPhotoStringByStuNo">
+      <http:operation location="/GetBookPhotoStringByStuNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBookCartInfoById">
+      <http:operation location="/InsertBookCartInfoById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartInfoById">
+      <http:operation location="/DeleteBookCartInfoById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookCartItemById">
+      <http:operation location="/DeleteBookCartItemById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookCartInfoById">
+      <http:operation location="/GetBookCartInfoById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookPriceById">
+      <http:operation location="/GetBookPriceById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookQuantityById">
+      <http:operation location="/GetBookQuantityById" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPhotoInfoByUsername">
+      <http:operation location="/InsertPhotoInfoByUsername" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePhotobyUsername">
+      <http:operation location="/GetProfilePhotobyUsername" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProfilePhotoByUsername">
+      <http:operation location="/DeleteProfilePhotoByUsername" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfilePhotoByUsername">
+      <http:operation location="/UpdateProfilePhotoByUsername" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BookStoreWebService">
+    <wsdl:port name="BookStoreWebServiceSoap" binding="tns:BookStoreWebServiceSoap">
+      <soap:address location="http://localhost:8004/BookStoreWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BookStoreWebServiceSoap12" binding="tns:BookStoreWebServiceSoap12">
+      <soap12:address location="http://localhost:8004/BookStoreWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BookStoreWebServiceHttpGet" binding="tns:BookStoreWebServiceHttpGet">
+      <http:address location="http://localhost:8004/BookStoreWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BookStoreWebServiceHttpPost" binding="tns:BookStoreWebServiceHttpPost">
+      <http:address location="http://localhost:8004/BookStoreWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

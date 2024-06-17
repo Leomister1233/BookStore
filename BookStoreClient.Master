@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BookStoreClient.master.cs" Inherits="OnlineShoppingBookStore.BookStoreClient" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 1191px;
+        }
+        .auto-style2 {
+            width: 1157px;
+            height: 69px;
+        }
+        .auto-style3 {
+            width: 606px;
+            text-shadow: 5px 5px 10px black;
+        }
+        .auto-style4 {
+            width: 850px;
+        }
+        .auto-style5 {
+            width: 606px;
+            height: 35px;
+        }
+    </style>
+</head>
+ <body style="background-repeat: no-repeat;background-image: url('/backgrounds/BookStore.jpg')">
+    <form id="form1" runat="server" >
+            <table class="auto-style1" style="margin:0px auto; ">
+                <tr>
+                    <td class="auto-style3" style="text-align:center">
+                        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Larger" Text="WELCOME TO THE BOOKSTORE!" ForeColor="#00FF99" style="text-shadow: 5px 5px 10px black;"></asp:Label>
+                    </td>
+                    <td class="auto-style4" style="place-items:end;text-align:center">
+                        <table class="auto-style21">
+                            <tr>
+                                <td class="auto-style2" style="text-align:left"><asp:Label ID="labName" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Larger" ForeColor="White" Text="Label"></asp:Label>
+                                    &nbsp;&nbsp;<asp:ImageButton ID="imgPhoto" runat="server" Height="79px" Width="95px" ImageUrl="~/backgrounds/loginimg.png" OnClick="imgPhoto_Click" />
+                                    
+                                </td>
+                                <td class="auto-style2" style="text-align:right"> 
+                                    <asp:Button ID="btnReturn" runat="server" Text="退出" OnClick="btnReturn_Click" />
+                                </td>
+                            </tr>
+                            </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style5">&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="True" Font-Size="Medium" ForeColor="White" NavigateUrl="~/BookStoreShoppingCart.aspx">Cart</asp:HyperLink>
+&nbsp;&nbsp;
+                        <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True" ForeColor="White" NavigateUrl="~/BooStoreClientHome.aspx">Home Page</asp:HyperLink>
+&nbsp;&nbsp;&nbsp; 
+                        <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="True" Font-Size="Medium" ForeColor="White" NavigateUrl="~/BookStoreClientInfo.aspx">Client Profile</asp:HyperLink>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                </tr>
+            </table>
+         
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+       
+    </form>
+</body>
+</html>

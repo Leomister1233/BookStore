@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BookStore.master.cs" Inherits="OnlineShoppingBookStore.BookStore1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 1191px;
+        }
+        .auto-style2 {
+            width: 1157px;
+            height: 69px;
+        }
+        .auto-style3 {
+            width: 606px;
+        }
+        .auto-style4 {
+            width: 850px;
+        }
+        </style>
+</head>
+<body style="background-repeat: repeat;background-image: url('/backgrounds/BookStore.jpg')">
+    <form id="form1" runat="server" >
+            <table class="auto-style1" style="margin:0px auto; ">
+                <tr>
+                    <td class="auto-style3" style="text-align:center">
+                        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Larger" Text="WELCOME TO THE BOOKSTORE!" ForeColor="#00FF99"></asp:Label>
+                    </td>
+                    <td class="auto-style4" style="place-items:end;text-align:center">
+                        <table class="auto-style21">
+                            <tr>
+                                <td class="auto-style2" style="text-align:left"><asp:Label ID="labName" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Larger" ForeColor="White" Text="Label"></asp:Label>
+                                    <asp:Image ID="Image1" runat="server" Height="76px" Width="79px" ImageUrl="~/backgrounds/loginimg.png" />
+                                </td>
+                                <td class="auto-style2" style="text-align:right"> 
+                                    <asp:Button ID="btnReturn" runat="server" Text="退出" OnClick="btnReturn_Click" />
+                                </td>
+                            </tr>
+                            </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:HyperLink ID="HyperLink3" runat="server" ForeColor="White" NavigateUrl="~/BookStoreManager.aspx">BookStore Manager</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;
+                        <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="White" NavigateUrl="~/InsertBook.aspx">InsertNewBook</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:HyperLink ID="HyperLink2" runat="server" ForeColor="White" NavigateUrl="~/ShowImage.aspx">Search For Book</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="True" ForeColor="White" NavigateUrl="~/BookStoreClientList.aspx">Client List</asp:HyperLink>
+                    </td>
+                </tr>
+            </table>
+         
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+       
+    </form>
+</body>
+</html>
